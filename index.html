@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Animation</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: gray;
+            transform-style: preserve-3d;
+        }
+        .box{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            transform-style: preserve-3d;
+            transform: perspective(1000px) rotateY(360deg);
+            animation: animate 20s linear infinite;
+        }
+        @keyframes animate{
+            0%{
+                transform: perspective(1000px) rotateY(0deg);
+            }
+            100%{
+                transform: perspective(1000px) rotateY(360deg);
+            }
+        }
+        .box span{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform-origin: center;
+            transform-style: preserve-3d;
+            transform: rotateY(calc(var(--i)* 45deg)) translateZ(300px);
+            -webkit-box-reflect: below 0px
+            linear-gradient(transparent,transparent,#0004);
+        }
+        .box span img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            user-select: none;
+        }
+    </style>
+    <audio controls loop width="10" hight="10" >
+        <source src="./dark-retro-synth-pop-111008.mp3" click it>
+    </audio>
+</head>
+<body>
+   
+    <div class="container">
+        <div class="box">
+            <span style="--i:1"><img src="https://static.wanderon.in/wp-content/uploads/2023/12/featured-image.webp"></span>
+            <span style="--i:2"><img src="https://media.istockphoto.com/id/506393198/photo/great-wall-of-china.jpg?s=612x612&w=0&k=20&c=cJti-RrdUUkLX_zgzi6KgPbgApHoxJtMJSvlRUYqOzg="></span>
+            <span style="--i:3"><img src="https://im.indiatimes.in/photogallery/2021/Jul/2afp_60e5874872ca7.jpg"></span>
+            <span style="--i:4"><img src="https://images.nationalgeographic.org/image/upload/t_edhub_resource_key_image/v1638882947/EducationHub/photos/tourists-at-victoria-falls.jpg"></span>
+            <span style="--i:5"><img src="https://cdn.britannica.com/36/162636-131-E4AA93A0/Colosseum-Rome-Italy.jpg"></span>
+            <span style="--i:6"><img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/07/03/1c/9c.jpg"></span>
+            <span style="--i:6"><img src="https://i.natgeofe.com/n/8eba070d-14e5-4d07-8bab-9db774029063/93080_2x1.jpg"></span>
+          <span style="--i:7"><img src="https://static.wanderon.in/wp-content/uploads/2023/09/untitled-design-2023-09-22t131041.203-min.png"></span>
+        </div>
+    </div>
+    
+    
+</body>
+</html>
